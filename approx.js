@@ -187,3 +187,27 @@ function Client(p, g) {
         return result;
     }
 }
+function info() {
+  var probabilities = $('#source').val().split(' ');
+  
+  var numeric_probs = [];
+  for (var i = 0; i < probabilities.length; i++) {
+    numeric_probs[i] = parseFloat(probabilities[i]);
+  }
+  
+  var min = Math.min.apply(Math, numeric_probs);
+  
+  var Hmax = -1 * Math.log2(min);
+  
+  var Havg = 0;
+  for (var i = 0; i < numeric_probs.length; i++) {
+    Havg += numeric_probs[i] * Math.log2(numeric_probs[i]);
+  }
+  Havg *= -1;
+  
+  var redundancy = (Hmax - Havg) / Hmax;
+  
+  $('#max').val(Hmax);
+  $('#avg').val(Havg);
+  $('#redundancy').val(redundancy);
+}

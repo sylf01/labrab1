@@ -9,7 +9,17 @@
 	<script src="approx.js"></script>
 </head>
 <body>
-	<section></section>
+	<section class="column">
+		<h2>1. Энтропия</h2>
+		<input type="text" id="source" />
+		<button onclick="info();">calculate</button>
+		<label for="max">H(max) = </label>
+		<input type="text" id="max" />
+		<label for="avg">H(avg) = </label>
+		<input type="text" id="avg" />
+		<label for="redundancy">Redundancy = </label>
+		<input type="text" id="redundancy" />
+	</section>
 	<section class="column">
 		<h2>2. Аппроксимация</h2>
 		<div class="row">
@@ -23,6 +33,7 @@
 		</div>
 	</section>
 	<section class="column">
+		<h2>3. Шифрование</h2>
 		<div class="row">
 			<textarea id="z3source"></textarea>
 			<div class="column">
